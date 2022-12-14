@@ -12,7 +12,6 @@ export function ContactForm() {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(addContacts(name, number));
-    // onSubmit({ name, number }); // ????
     setName('');
     setNumber('');
   };
