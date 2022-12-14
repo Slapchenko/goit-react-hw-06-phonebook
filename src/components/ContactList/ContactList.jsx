@@ -4,11 +4,10 @@ import { getContacts, getFilter } from 'redux/selectors';
 import { Contact } from './Contact';
 import { ContactListGroup, СontactСard } from './ContactList.styled';
 
- const getVisibleContacts = (contacts, filter) =>
-    contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
-  
+const getVisibleContacts = (contacts, filter) =>
+  contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
@@ -17,17 +16,16 @@ export const ContactList = () => {
 
   return (
     <ContactListGroup>
-      {visibleContacts &&
-        visibleContacts.map(({ id, name, number }) => (
-          <СontactСard key={id}>
-            <Contact
-              name={name}
-              number={number}
-              id={id}
-              // onDeleteContact={() => onDeleteContact(id)}
-            />
-          </СontactСard>
-        ))}
+      {visibleContacts.map(({ id, name, number }) => (
+        <СontactСard key={id}>
+          <Contact
+            name={name}
+            number={number}
+            id={id}
+            // onDeleteContact={() => onDeleteContact(id)}
+          />
+        </СontactСard>
+      ))}
     </ContactListGroup>
   );
 };
