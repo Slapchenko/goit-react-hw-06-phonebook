@@ -4,23 +4,21 @@ import { getContacts, getFilter } from 'redux/selectors';
 import { Contact } from './Contact';
 import { ContactListGroup, СontactСard } from './ContactList.styled';
 
+ const getVisibleContacts = (contacts, filter) =>
+    contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
+  
+
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
-  console.log('contacts', contacts);
-  console.log('filter', filter);
-
-  // !что то тут не то...
-
-  // const visibleContacts = () =>
-  //   contacts.filter(contact =>
-  //     contact.name.toLowerCase().includes(filter.toLowerCase())
-  //   );
+  const visibleContacts = getVisibleContacts(contacts, filter);
 
   return (
     <ContactListGroup>
-      {contacts &&
-        contacts.map(({ id, name, number }) => (
+      {visibleContacts &&
+        visibleContacts.map(({ id, name, number }) => (
           <СontactСard key={id}>
             <Contact
               name={name}
