@@ -32,19 +32,3 @@ export const contactsSlice = createSlice({
 
 export const { addContacts, deleteContacts } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
-
-// export const contactsSlice = createSlice({
-//   name: 'counter',
-//   initialState,
-//   reducers: {
-//     increment: state => {
-//       state.value += 1;
-//     },
-//     decrement: state => {
-//       state.value -= 1;
-//     },
-//     incrementByAmount: (state, action) => {
-//       state.value += action.payload;
-//     },
-//   },
-// });

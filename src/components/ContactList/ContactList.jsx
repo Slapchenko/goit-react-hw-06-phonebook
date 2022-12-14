@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { getContacts, getFilter } from 'redux/selectors';
 import { getVisibleContacts } from '../../helpers/visibleContacts';
@@ -21,7 +20,3 @@ export const ContactList = () => {
   );
 };
 
-// ContactList.propTypes = {
-//   contacts: PropTypes.array,
-//   onDeleteContact: PropTypes.func.isRequired,
-// };
